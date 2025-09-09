@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1255814077483579184}
   - component: {fileID: 5971109550992659876}
-  - component: {fileID: 7484540800667495837}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4053904141979680018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49,22 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   moveSpeed: 4
   deadZone: -30
---- !u!114 &7484540800667495837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4053904141979680018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7890ed72100a43e4a13027362fecabe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PipePairGap
-  topPipe: {fileID: 1207707707554325835}
-  bottomPipe: {fileID: 453462907862849794}
-  birdHeight: 4.25
-  gapMultiplier: 3
 --- !u!1 &5244981791923971466
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +75,7 @@ Transform:
   m_GameObject: {fileID: 5244981791923971466}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -17.312714, z: 0}
+  m_LocalPosition: {x: 0.1, y: -15, z: 0}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 7542807358272240390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 17.312714, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -3,10 +3,11 @@ using UnityEngine;
 public class PipeSpawnerScript : MonoBehaviour
 {
     public GameObject pipe;
-    public float spawnRate = 4.0f;
-    public float heightOffset = 10.0f;
+    public float spawnRate = 4.0f;          // ad
+    public float heightOffset = 10.0f;      // adjusts the 
 
-    private float timer = 0.0f; 
+    private float timer = 0.0f;
+    private float baseY;                     // remember where the spawner started  
 
     // track how many spawners exist (to detect duplicates)
     private static int globalSpawnerCounter = 0;
@@ -14,8 +15,9 @@ public class PipeSpawnerScript : MonoBehaviour
 
     void Awake()
     {
-        id = ++globalSpawnerCounter;
-        Debug.Log($"[Spawner #{id}] Awake on {gameObject.name}. spawnRate={spawnRate}, timeScale={Time.timeScale}");
+        // remember where the spawner is positioned
+        // (we'll move it vertically each time we spawn a pipe)
+        baseY = transform.position.y;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,12 +43,11 @@ public class PipeSpawnerScript : MonoBehaviour
 
     }
     void SpawnPipe()
-    {
-        float lowestPoint = transform.position.y - heightOffset;
-        float highestPoint = transform.position.y + heightOffset;
-        float randomY = Random.Range(lowestPoint, highestPoint);
-        transform.position = new Vector3(transform.position.x, randomY, transform.position.z);
+    {   
+        float randomY = Random.Range(baseY - heightOffset, baseY + heightOffset);
 
-        Instantiate(pipe, transform.position, transform.rotation);
+        Vector3 spawnPos = new Vector3(transform.position.x, randomY, transform.position.z);
+
+        Instantiate(pipe, spawnPos, transform.rotation);
     }
 }
